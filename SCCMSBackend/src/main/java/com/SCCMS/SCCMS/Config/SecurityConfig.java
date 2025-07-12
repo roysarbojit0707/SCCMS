@@ -2,6 +2,7 @@ package com.SCCMS.SCCMS.Config;
 
 //import com.backend.FireFlyBackend.Service.CustomOAuth2UserService;
 //import org.springframework.beans.factory.annotation.Autowired;
+import com.SCCMS.SCCMS.Service.CustomOAuth2UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -15,11 +16,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-//    @Autowired
-//    private CustomOAuth2UserService customOAuth2UserService;
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http, CustomOAuth2UserService customOAuth2UserService) throws Exception {
         http
                 .cors(Customizer.withDefaults()) // or `.cors(Customizer.withDefaults())` if you want to enable it
                 .csrf(AbstractHttpConfigurer::disable) // ✅ disable CSRF for API endpoints
@@ -30,11 +29,11 @@ public class SecurityConfig {
                         .requestMatchers("/check/**").permitAll()
                         .requestMatchers("/contact/**").permitAll()// ✅ Allow public access
                         .anyRequest().authenticated() // ✅ Everything else requires auth
-                );
-//                .oauth2Login(oauth->oauth
-//                        .userInfoEndpoint(userInfo->userInfo
-//                                .userService(customOAuth2UserService))
-//                        .defaultSuccessUrl("/redirect",true));
+                )
+                .oauth2Login(oauth2->oauth2
+                        .userInfoEndpoint(userInfo->userInfo
+                                .userService(customOAuth2UserService))
+                        .defaultSuccessUrl("/redirect",true));
 
         return http.build();
     }

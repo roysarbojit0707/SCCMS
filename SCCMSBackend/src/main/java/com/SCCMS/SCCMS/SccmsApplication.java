@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SccmsApplication {
 
 	public static void main(String[] args) {
-		new EnvLoader();
 		SpringApplication.run(SccmsApplication.class, args);
 	}
 
