@@ -7,19 +7,21 @@ public class ComplainDTO {
     private String governmentIDType;
     private String building;
     private String apartmentNumber;
-    private String address;
+    private String department;
+    private String complain;
 
     public ComplainDTO() {
     }
 
-    public ComplainDTO(String fullName, String emailAddress, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String address) {
+    public ComplainDTO(String fullName, String emailAddress, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String department, String complain) {
         this.fullName = fullName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
         this.governmentIDType = governmentIDType;
         this.building = building;
         this.apartmentNumber = apartmentNumber;
-        this.address = address;
+        this.department = department;
+        this.complain = complain;
     }
 
     public String getFullName() {
@@ -70,11 +72,19 @@ public class ComplainDTO {
         this.apartmentNumber = apartmentNumber;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getComplain() {
+        return complain;
+    }
+
+    public void setComplain(String complain) {
+        this.complain = complain;
     }
 }
