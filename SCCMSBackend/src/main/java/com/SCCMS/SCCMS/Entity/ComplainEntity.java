@@ -9,6 +9,8 @@ import jakarta.persistence.Table;
 @Table(name="Complains")
 public class ComplainEntity {
     @Id
+    private String complainToken;
+    @Column(name = "emailAddress")
     private String emailAddress;
     @Column(name="fullName")
     private String fullName;
@@ -20,20 +22,32 @@ public class ComplainEntity {
     private String building;
     @Column(name="apartmentNumber")
     private String apartmentNumber;
-    @Column(name="address")
-    private String address;
+    @Column(name="department")
+    private String department;
+    @Column(name="complain")
+    private String complain;
 
     public ComplainEntity() {
     }
 
-    public ComplainEntity(String fullName, String emailAddress, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String address) {
-        this.fullName = fullName;
+    public ComplainEntity(String complainToken, String emailAddress, String fullName, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String department, String complain) {
+        this.complainToken = complainToken;
         this.emailAddress = emailAddress;
+        this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.governmentIDType = governmentIDType;
         this.building = building;
         this.apartmentNumber = apartmentNumber;
-        this.address = address;
+        this.department = department;
+        this.complain = complain;
+    }
+
+    public String getComplainToken() {
+        return complainToken;
+    }
+
+    public void setComplainToken(String complainToken) {
+        this.complainToken = complainToken;
     }
 
     public String getFullName() {
@@ -84,11 +98,19 @@ public class ComplainEntity {
         this.apartmentNumber = apartmentNumber;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getComplain() {
+        return complain;
+    }
+
+    public void setComplain(String complain) {
+        this.complain = complain;
     }
 }
