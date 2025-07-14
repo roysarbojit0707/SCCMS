@@ -43,16 +43,17 @@ public class UserService {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage,true);
 
-            messageHelper.setFrom("rajmukherjeegcp@gmail.com");
+            messageHelper.setFrom("sarbojitroy08986@gmail.com");
             messageHelper.setTo(email);
-            messageHelper.setSubject("OTP for our Verification: TEAM LIBRARY");
+            messageHelper.setSubject("OTP for our Verification: UrbanEcho");
             messageHelper.setText(
                     "<html>" +
                             "<body style='font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;'>" +
                             "<div style='max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>" +
                             "<div style='text-align: center; margin-bottom: 20px;'>" +
-                            "<img src='/images/fireflyLogo.png' alt='Team FireFly Logo' style='height: 60px; margin-bottom: 10px;' />" +
-                            "<h1 style='font-size: 26px; color: #333;'>Welcome to Team FireFly, " + username + "!</h1>" +
+                            "<img src='/images/UrbanEcho.png' alt='Team UrbanEcho Logo' style='height: 60px; margin-bottom: 10px;' />" +
+                            "<h1 style='font-size: 26px; color: #333;'>Welcome to Team UrbanEcho</h1>" +
+                            "<h1 style='font-size: 26px; color: #b3b300;'>"+username+" !</h1>"+
                             "</div>" +
                             "<p style='font-size: 18px; color: #555;'>We're excited to have you on board. Use the OTP below to complete your verification process:</p>" +
                             "<div style='text-align: center; margin: 20px 0;'>" +
@@ -60,11 +61,11 @@ public class UserService {
                             "</div>" +
                             "<p style='font-size: 16px; color: #d93025;'><strong>Security Notice:</strong></p>" +
                             "<ul style='font-size: 14px; color: #555; padding-left: 20px;'>" +
-                            "<li>Never share your OTP with anyone, including Team FireFly staff.</li>" +
+                            "<li>Never share your OTP with anyone, including Team UrbanEcho staff.</li>" +
                             "<li>This OTP is valid for a limited time and can only be used once.</li>" +
                             "<li>If you did not request this OTP, please disregard this email.</li>" +
                             "</ul>" +
-                            "<p style='font-size: 14px; color: #999; text-align: center; margin-top: 30px;'>© 2025 Team FireFly. All rights reserved.</p>" +
+                            "<p style='font-size: 14px; color: #999; text-align: center; margin-top: 30px;'>© 2025 Team UrbanEcho. All rights reserved.</p>" +
                             "</div>" +
                             "</body>" +
                             "</html>",
