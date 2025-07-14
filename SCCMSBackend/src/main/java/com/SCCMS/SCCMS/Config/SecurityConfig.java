@@ -27,7 +27,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/**").permitAll()
                         .requestMatchers("/","/login**").permitAll()
                         .requestMatchers("/check/**").permitAll()
-                        .requestMatchers("/contact/**").permitAll()// ✅ Allow public access
+                        .requestMatchers("/contact/**","/complain/**").permitAll()// ✅ Allow public access
                         .anyRequest().authenticated() // ✅ Everything else requires auth
                 )
                 .oauth2Login(oauth2->oauth2
