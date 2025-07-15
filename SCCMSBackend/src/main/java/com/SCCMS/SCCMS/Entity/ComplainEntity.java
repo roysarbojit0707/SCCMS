@@ -26,11 +26,13 @@ public class ComplainEntity {
     private String department;
     @Column(name="complain")
     private String complain;
+    @Column(name="timeSlot")
+    private String timeSlot;
 
     public ComplainEntity() {
     }
 
-    public ComplainEntity(String complainToken, String emailAddress, String fullName, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String department, String complain) {
+    public ComplainEntity(String complainToken, String emailAddress, String fullName, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String department, String complain, String timeSlot) {
         this.complainToken = complainToken;
         this.emailAddress = emailAddress;
         this.fullName = fullName;
@@ -40,6 +42,7 @@ public class ComplainEntity {
         this.apartmentNumber = apartmentNumber;
         this.department = department;
         this.complain = complain;
+        this.timeSlot = timeSlot;
     }
 
     public String getComplainToken() {
@@ -112,5 +115,13 @@ public class ComplainEntity {
 
     public void setComplain(String complain) {
         this.complain = complain;
+    }
+
+    public String getTimeSlot() {
+        return timeSlot;
+    }
+
+    public void setTimeSlot(String timeSlot) {
+        this.timeSlot = timeSlot;
     }
 }

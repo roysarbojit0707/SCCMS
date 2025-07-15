@@ -19,13 +19,13 @@ public class ComplainService {
     private PdfEmailService pdfEmailService;
     @Autowired
     private UserRepository userRepository;
-    public boolean ComplainRegister(String complainToken,String fullName,String emailAddress,String phoneNumber, String governmentIDType,String building,String apartmentNumber,String department,String complain){
+    public boolean ComplainRegister(String complainToken,String fullName,String emailAddress,String phoneNumber, String governmentIDType,String building,String apartmentNumber,String department,String complain,String timeSlot){
         try{
             Optional<UserEntity> ue = userRepository.findById(emailAddress);
             if(ue.isPresent()){
-                ComplainEntity complainEntity = new ComplainEntity(complainToken,emailAddress,fullName,phoneNumber,governmentIDType,building,apartmentNumber,department,complain);
+                ComplainEntity complainEntity = new ComplainEntity(complainToken,emailAddress,fullName,phoneNumber,governmentIDType,building,apartmentNumber,department,complain,timeSlot);
                 complainRepository.save(complainEntity);
-                pdfEmailService.generateAndSendPdf(complainToken,fullName,emailAddress,building,apartmentNumber,department,complain);
+                pdfEmailService.generateAndSendPdf(complainToken,fullName,emailAddress,building,apartmentNumber,department,complain,timeSlot);
                 return true;
             }else{
                 return false;

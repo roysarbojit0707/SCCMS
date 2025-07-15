@@ -26,7 +26,8 @@ public class ComplainController {
         String apartmentNumber = complainDTO.getApartmentNumber();
         String department = complainDTO.getDepartment();
         String complain = complainDTO.getComplain();
-        boolean isComplainRegister = complainService.ComplainRegister(complainToken,fullName,emailAddress,phoneNumber,governmentIDType,building,apartmentNumber,department,complain);
+        String timeSlot = complainDTO.getTimeSlot();
+        boolean isComplainRegister = complainService.ComplainRegister(complainToken,fullName,emailAddress,phoneNumber,governmentIDType,building,apartmentNumber,department,complain,timeSlot);
         return Map.of("isComplainRegister",isComplainRegister);
     }
 }

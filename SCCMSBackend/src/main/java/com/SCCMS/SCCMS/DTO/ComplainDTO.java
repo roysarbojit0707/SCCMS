@@ -9,11 +9,12 @@ public class ComplainDTO {
     private String apartmentNumber;
     private String department;
     private String complain;
+    private String timeSlot;
 
     public ComplainDTO() {
     }
 
-    public ComplainDTO(String fullName, String emailAddress, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String department, String complain) {
+    public ComplainDTO(String fullName, String emailAddress, String phoneNumber, String governmentIDType, String building, String apartmentNumber, String department, String complain, String timeSlot) {
         this.fullName = fullName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
@@ -22,6 +23,7 @@ public class ComplainDTO {
         this.apartmentNumber = apartmentNumber;
         this.department = department;
         this.complain = complain;
+        this.timeSlot = timeSlot;
     }
 
     public String getFullName() {
@@ -86,5 +88,13 @@ public class ComplainDTO {
 
     public void setComplain(String complain) {
         this.complain = complain;
+    }
+
+    public String getTimeSlot() {
+        return timeSlot;
+    }
+
+    public void setTimeSlot(String timeSlot) {
+        this.timeSlot = timeSlot;
     }
 }
