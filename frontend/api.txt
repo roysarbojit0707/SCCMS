@@ -1,0 +1,22 @@
+ BACEND_URL: 'http://localhost:8080/api/v1.0'
+
+ 1. post: /register
+ 2. post: /login
+ 3. post: /send-otp
+ 3. post: /verify-otp
+ 4. post: /send-reset-otp?email=${email}
+ 5. post: /reset-password
+ 6. post: /logout
+
+
+1. get: /profile
+2. get: /is-authenticated
+
+
+
+signup-> /
+login-> /user-dashboard
+verify-otp -> /user-dashboard
+reset-password -> verify-otp -> new-password -> /login
+
+ 
